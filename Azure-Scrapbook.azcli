@@ -1,0 +1,9 @@
+# Create itmes needed for imaging
+
+az group create --name sb-rg-imaging-cli --location uksouth
+
+az vm create --name sb-vm-dc --location uksouth --resource-group sb-rg-imaging-cli --image MicrosoftWindowsServer:WindowsServer:2022-Datacenter:latest --size Standard_B2s --public-ip-sku Standard --admin-username sambrentnall
+
+az vm image list --all -p MicrosoftWindowsDesktop --offer windows-11 --output table
+az vm image list --all -p MicrosoftWindowsDesktop --offer windows-10 --output table
+az vm list-sizes --location uksouth --output table
