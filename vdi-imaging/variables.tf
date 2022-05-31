@@ -19,23 +19,30 @@ variable "resource_prefix" {
 
 }
 
+variable "vm_size" {
+  description = "VM Size for all VM's"
+  type        = string
+  default     = "Standard_B1s"
+
+}
+
 variable "my_ip" {
   description = "My home IP for locking down NSG"
   type        = string
-  sensitive = true
+  sensitive   = true
 
 }
 
 variable "username" {
   description = "Username for VM's"
   type        = string
-  sensitive = true
+  sensitive   = true
 
 }
 
 variable "password" {
   description = "Password for VM's"
   type        = string
-  sensitive = true
+  sensitive   = true
 
 }
